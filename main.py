@@ -46,8 +46,6 @@ def find_l(matrix, index):
     for i in range(0, len(matrix)):
         if not i in indexs_already_in_use and matrix[i][index] == 1:
             return i
-        
-    print(indexs_already_in_use)
     
     # Если не нашёлся оптимальный элемент, выбираем любой
     for i in range(0, len(matrix)):
@@ -115,7 +113,7 @@ def main():
         [1, 3, -2, 1],
         [0, 1, 2, 8]
     ]
-
+    
     # Ответ [0.4, 0.9, 0.3]
     # matrix = [
     #     [1, 2, 3, 3],
