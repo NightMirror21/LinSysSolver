@@ -38,7 +38,7 @@ def find_l(matrix, index):
     # Сбор индексов уже используемых элементов
     indexs_already_in_use = []
     for i in range(index):
-        previous_column = copy_matrix(matrix)
+        previous_column = matrix[i]
         for j in range(0, len(matrix)):
             if previous_column[j] == 1 and not j in indexs_already_in_use:
                 indexs_already_in_use.append(j)
