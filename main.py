@@ -38,19 +38,19 @@ def find_l(matrix, index):
     # Сбор индексов уже используемых элементов
     indexs_already_in_use = []
     for i in range(index):
-        previous_column = matrix[i]
         for j in range(0, len(matrix)):
-            if previous_column[j] == 1 and not j in indexs_already_in_use:
+            if matrix[j][i] == 1 and not j in indexs_already_in_use:
                 indexs_already_in_use.append(j)
 
     # Поиск оптимального элемента
-    column = copy_matrix(matrix)
-    for i in range(0, len(column)):
-        if not i in indexs_already_in_use and column[i] == 1:
+    for i in range(0, len(matrix)):
+        if not i in indexs_already_in_use and matrix[i][index] == 1:
             return i
+        
+    print(indexs_already_in_use)
     
     # Если не нашёлся оптимальный элемент, выбираем любой
-    for i in range(0, len(column)):
+    for i in range(0, len(matrix)):
         if not i in indexs_already_in_use:
             return i
 
